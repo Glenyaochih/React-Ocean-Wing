@@ -1,13 +1,18 @@
+import { Routes, Route, Link } from 'react-router-dom'
+import Home from './pages/Home'
+import About from './pages/About'
 
-
-function App() {
-
+export default function App() {
 	return (
-		<>
-			<button className="btn btn-primary-300 ms-18">按鈕</button>
-			<h1 className="">c8 c8 </h1>
-		</>
+		<div>
+			<nav>
+				<Link to="/">首頁</Link> | <Link to="/about">關於我們</Link>
+			</nav>
+
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/about" element={<About />} />
+			</Routes>
+		</div>
 	)
 }
-
-export default App
