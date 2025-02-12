@@ -1,17 +1,14 @@
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
+import Backend from './pages/backend'
 import Home from './pages/Home'
-import About from './pages/About'
+import './assets/scss/all.scss'
 
 export default function App() {
 	return (
-		<div>
-			<nav>
-				<Link to="/">首頁</Link> | <Link to="/about">關於我們</Link>
-			</nav>
-
+		<div className="bg-primary-500">
 			<Routes>
 				<Route path="/" element={<Home />} />
-				<Route path="/about" element={<About />} />
+				<Route path="/backend" element={<Backend />} />
 			</Routes>
 		</div>
 	)
