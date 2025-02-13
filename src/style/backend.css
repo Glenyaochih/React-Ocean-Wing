@@ -1,0 +1,107 @@
+.layout {
+	display: flex;
+	min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+	.layout {
+		flex-direction: row !important;
+	}
+}
+
+.layout-sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 300px;
+	height: 100vh;
+	overflow-y: auto;
+
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+&::-webkit-scrollbar {
+	display: none;
+}
+
+.layout-main {
+	flex: 1;
+	margin-left: 300px;
+	min-height: 100vh;
+	overflow-y: auto;
+}
+
+.content {
+	padding: 40px;
+}
+
+@media (max-width: 768px) {
+	.content {
+		padding: 12px;
+	}
+}
+
+.productOption {
+	width: 100px !important;
+	height: 40px !important;
+	font-size: 16px !important;
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+}
+
+.delButton {
+	width: 101px !important;
+	height: 46px !important;
+	font-size: 20px !important;
+}
+
+.table-container {
+	max-height: 658px;
+	overflow-y: auto;
+}
+
+thead tr th {
+	background-color: #161b26 !important;
+	font-weight: 700;
+	font-size: 16px;
+	text-align: center;
+	color: #ffffff !important;
+}
+
+tbody tr td {
+	border-bottom: 1px solid #6a6a6a !important;
+	text-align: center;
+	background-color: #1d222c !important;
+	color: #ffffff !important;
+	font-weight: 400 !important;
+	font-size: 16px !important;
+	line-height: 24px;
+	vertical-align: middle;
+	padding: 25px 20px !important;
+}
+
+.web {
+	display: block !important;
+}
+
+.app {
+	display: none !important;
+}
+
+@media (max-width: 768px) {
+	.layout-sidebar {
+		display: none !important;
+	}
+
+	.layout-main {
+		margin-left: 0px;
+	}
+
+	.app {
+		display: block !important;
+	}
+	.web {
+		display: none !important;
+	}
+}

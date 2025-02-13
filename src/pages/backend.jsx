@@ -1,43 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
-import '../style/backend.scss'
+import Layout from '../layout/Aside'
+import '../style/backend.css'
 
-const Sidebar = () => {
-	return (
-		<aside className="aside col-2 web">
-			<div className="d-flex flex-column justify-content-between flex-shrink-0 text-white bg-primary-400 h-100 pt-9 px-7 pb-7">
-				<div>
-					<a href="/" className="d-flex align-items-center mb-12 text-white text-decoration-none">
-						<img className="img-fluid" src="/images/Ocean-Wings-logo-lg.svg" alt="Logo" />
-					</a>
-					<ul className="nav nav-pills flex-column">
-						<li>
-							<a href="#" className="nav-link text-white fs-6 mb-9">
-								顧客管理
-							</a>
-						</li>
-						<li>
-							<a href="#" className="nav-link text-white fs-6 mb-9">
-								商品管理
-							</a>
-						</li>
-						<li>
-							<a href="#" className="nav-link text-white fs-6 mb-9">
-								商品上架
-							</a>
-						</li>
-						<li>
-							<a href="#" className="nav-link text-white fs-6 mb-9">
-								心得牆
-							</a>
-						</li>
-					</ul>
-				</div>
-				<button className="btn btn-primary-400 border py-3">登出</button>
-			</div>
-		</aside>
-	)
-}
 const Pagination = ({ page, totalPages, onPageChange }) => {
 	const pageRange = () => {
 		const range = []
@@ -74,7 +39,7 @@ const LimitSelector = ({ limit, onLimitChange }) => {
 			</label>
 			<select
 				id="limit"
-				className="form-select w-auto"
+				className="form-select w-auto bg-primary-400 "
 				value={limit}
 				onChange={onLimitChange}
 				style={{
@@ -95,7 +60,7 @@ const LimitSelector = ({ limit, onLimitChange }) => {
 const ProductTable = () => {
 	const [products, setProducts] = useState([])
 	const [page, setPage] = useState(1)
-	const [limit, setLimit] = useState(10)
+	const [limit, setLimit] = useState(5)
 	const [totalPages, setTotalPages] = useState(1)
 	const [loading, setLoading] = useState(false)
 	const API_HOST = import.meta.env.VITE_BACKEND_HOST
@@ -134,51 +99,57 @@ const ProductTable = () => {
 	}
 
 	return (
-		<div className="table-responsive pt-4">
-			{loading && <div className="text-center">載入中...</div>}
+		<div className="table-wrapper">
+			<div className="table-container table-responsive pt-4">
+				{loading && <div className="text-center">載入中...</div>}
 
-			<table className="table productManager rounded-table table-hover">
-				<thead>
-					<tr>
-						<th>
-							<input type="checkbox" className="form-check-input me-2" />
-						</th>
-						<th>商品編號</th>
-						<th>商品名稱</th>
-						<th>類型</th>
-						<th>等級</th>
-						<th>價格</th>
-						<th>數量</th>
-						<th>狀態</th>
-						<th>折價券</th>
-						<th>圖片</th>
-						<th>描述</th>
-					</tr>
-				</thead>
-				<tbody>
-					{products.map(product => (
-						<tr key={product.id} className="tableBorder">
-							<td>
+				<table className="table rounded-table table-hover">
+					<thead>
+						<tr>
+							<th>
 								<input type="checkbox" className="form-check-input me-2" />
-							</td>
-							<td>{product.productId}</td>
-							<td>{product.name}</td>
-							<td>{product.type}</td>
-							<td>{product.grade}</td>
-							<td>{product.price}</td>
-							<td>{product.quantity}</td>
-							<td>{product.status ? '啟用' : '停用'}</td>
-							<td>{product.hasDiscount ? '是' : '否'}</td>
-							<td>
-								<img src={product.imageUrl || 'https://fakeimg.pl/88/'} className="img-fluid rounded" alt="product" width="50" height="50" />
-							</td>
-							<td>{product.description}</td>
+							</th>
+							<th>商品編號</th>
+							<th>商品名稱</th>
+							<th>類型</th>
+							<th>等級</th>
+							<th>價格</th>
+							<th>數量</th>
+							<th>狀態</th>
+							<th>折價券</th>
+							<th>圖片</th>
+							<th>描述</th>
+							<th>功能鍵</th>
 						</tr>
-					))}
-				</tbody>
-			</table>
+					</thead>
+					<tbody>
+						{products.map(product => (
+							<tr key={product.id}>
+								<td>
+									<input type="checkbox" className="form-check-input me-2" />
+								</td>
+								<td>{product.productId}</td>
+								<td>{product.name}</td>
+								<td>{product.type}</td>
+								<td>{product.grade}</td>
+								<td>{product.price}</td>
+								<td>{product.quantity}</td>
+								<td>{product.status ? '啟用' : '停用'}</td>
+								<td>{product.hasDiscount ? '是' : '否'}</td>
+								<td>
+									<img src={product.imageUrl || 'https://fakeimg.pl/88/'} className="img-fluid rounded" alt="product" width="50" height="50" />
+								</td>
+								<td>{product.description}</td>
+								<td>
+									<i className="bi bi-pencil"></i>
+								</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
 
-			<div className="d-flex justify-content-between mt-4">
+			<div className="table-controls d-flex justify-content-between mt-2">
 				<LimitSelector limit={limit} onLimitChange={handleLimitChange} />
 				<Pagination page={page} totalPages={totalPages} onPageChange={setPage} />
 			</div>
@@ -188,25 +159,33 @@ const ProductTable = () => {
 
 const App = () => {
 	return (
-		<div className="backend d-flex ">
-			<Sidebar />
-			<section className="main col-12 col-lg-10 mt-10 bg-primary-500">
+		<Layout>
+			<section className="content bg-primary-500">
+				<div className="web">
+					<div className="d-flex justify-content-between align-items-center ">
+						<i className="bi bi-search text-white fs-5 web"></i>
+						<div className="d-flex justify-content-center align-items-center ">
+							<div className="rounded-circle bg-white text-black fs-5 pe-3 ">A</div>
+							<div className="text-white fs-6 ms-2">Alice</div>
+						</div>
+					</div>
+				</div>
 				<div className="banner mb-4">
-					<h5 className="fs-5 mt-4 mb-7">商品管理</h5>
+					<h5 className="fs-5 mt-4 mb-4">商品管理</h5>
 					<div className="d-flex justify-content-between align-items-center">
-						<select className="form-select bg-primary-400 text-white h-100">
+						<select className="form-select productOption bg-primary-400 text-white">
 							<option>類別</option>
 							<option value="商品編號">商品編號</option>
 							<option value="商品名稱">商品名稱</option>
 						</select>
-						<button className="btn btn-primary-500 text-white border deleteButton px-4">
-							<i className="bi bi-trash text-white me-1"></i>刪除
+						<button className="btn btn-primary-500 text-white border px-4 delButton">
+							<i className="bi bi-trash me-1"></i>刪除
 						</button>
 					</div>
 				</div>
 				<ProductTable />
 			</section>
-		</div>
+		</Layout>
 	)
 }
 
