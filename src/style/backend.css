@@ -57,7 +57,7 @@
 }
 
 .table-container {
-	max-height: 658px;
+	max-height: 620px;
 	overflow-y: auto;
 }
 
@@ -71,7 +71,7 @@ thead tr th {
 
 tbody tr td {
 	border-bottom: 1px solid #6a6a6a !important;
-	text-align: center;
+	text-align: center !important;
 	background-color: #1d222c !important;
 	color: #ffffff !important;
 	font-weight: 400 !important;
@@ -79,6 +79,11 @@ tbody tr td {
 	line-height: 24px;
 	vertical-align: middle;
 	padding: 25px 20px !important;
+}
+
+.inputText {
+	width: 100px !important;
+	text-align: center !important;
 }
 
 .web {
