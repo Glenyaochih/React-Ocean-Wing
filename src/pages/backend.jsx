@@ -2,13 +2,13 @@ import React, { useState, useEffect, useRef, useCallback } from 'react'
 import axios from 'axios'
 import Layout from '../layout/Aside'
 import '../style/backend.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap-icons/font/bootstrap-icons.css'
+import { Link } from 'react-router-dom'
+import logo from '/images/backendIcon.png'
 
 const Pagination = ({ page, totalPages, onPageChange }) => {
 	const pageRange = () => {
 		const range = []
-		const maxDisplayPages = 4
+		const maxDisplayPages = 3
 		let start = Math.max(1, page - Math.floor(maxDisplayPages / 2))
 		let end = Math.min(totalPages, start + maxDisplayPages - 1)
 
@@ -23,7 +23,7 @@ const Pagination = ({ page, totalPages, onPageChange }) => {
 	}
 
 	return (
-		<div className="pagination-container">
+		<div className="pagination-container mt-10 mt-md-0">
 			{/* Previous and First buttons */}
 			<button className="btn btn-outline-primary-300 mx-1" onClick={() => onPageChange(1)} disabled={page === 1}>
 				|&lt;
@@ -299,7 +299,7 @@ const ProductTable = ({ selectedProductIds, onProductSelect, handleDeleteClick }
 								<td>{renderEditableField(product, 'status')}</td>
 								<td>{renderEditableField(product, 'hasDiscount')}</td>
 								<td>
-									<img src={product.imageUrl || 'https://fakeimg.pl/88/'} className="img-fluid rounded" alt="product" width="50" height="50" />
+									<img src={product.imageUrl || 'https://fakeimg.pl/88/'} className="img-fluid rounded" alt="product" width="80" height="120" />
 								</td>
 								<td>{renderEditableField(product, 'description')}</td>
 								<td>{editingProductId === product.id ? <i className="bi bi-save" onClick={handleSaveClick} style={{ cursor: 'pointer' }}></i> : <i className="bi bi-pencil" onClick={() => handleEditClick(product)} style={{ cursor: 'pointer' }}></i>}</td>
@@ -309,12 +309,85 @@ const ProductTable = ({ selectedProductIds, onProductSelect, handleDeleteClick }
 				</table>
 			</div>
 
-			<div className="table-controls d-flex justify-content-between mt-2">
+			<div className="table-controls d-flex flex-column flex-md-row justify-content-between mt-2 ">
 				<LimitSelector limit={limit} onLimitChange={handleLimitChange} />
 				<Pagination page={page} totalPages={totalPages} onPageChange={setPage} />
 			</div>
 
 			<ConfirmDialog show={showConfirmDelete} message={`確定要刪除選中的 ${selectedProductIds.length} 個商品嗎？`} onConfirm={confirmDelete} onCancel={() => setShowConfirmDelete(false)} />
+		</div>
+	)
+}
+
+const MobileHeader = () => {
+	const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+	const toggleMenu = () => {
+		setIsMenuOpen(!isMenuOpen)
+	}
+
+	return (
+		<div className="d-lg-none">
+			{/* Fixed Header */}
+			{/* Fixed Header */}
+			<div className="bg-primary-400" style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000 }}>
+				<div className="d-flex align-items-center p-3">
+					<button className="btn text-white me-3" onClick={toggleMenu}>
+						<i className="bi bi-list fs-4"></i>
+					</button>
+					<img src={logo} alt="Ocean Wings" height="30" />
+					<button className="btn text-white ms-auto">
+						<i className="bi bi-search fs-5"></i>
+					</button>
+				</div>
+			</div>
+
+			{/* Dropdown Menu */}
+			<div
+				className="bg-primary-400 overflow-hidden d-flex flex-column"
+				style={{
+					position: 'fixed',
+					top: '80px', // 讓它從 header 下面開始
+					left: 0,
+					right: 0,
+					height: isMenuOpen ? 'calc(100vh - 80px)' : '0', // 讓 menu 佔滿 header 下面的區域
+					transition: 'height 0.3s ease-in-out',
+					zIndex: 999,
+				}}
+			>
+				<div className="d-flex flex-column text-white flex-grow-1">
+					{/* Navigation Links */}
+					<nav className="mt-10 ms-10">
+						<ul className=" list-unstyled">
+							<li className="mb-3">
+								<Link to="/backend" className="nav-link text-white fs-6 mb-9">
+									顧客管理
+								</Link>
+							</li>
+							<li className="mb-3">
+								<Link to="/backend" className="nav-link text-white fs-6 mb-9">
+									商品管理
+								</Link>
+							</li>
+							<li className="mb-3">
+								<Link to="/backend" className="nav-link text-white fs-6 mb-9">
+									商品上架
+								</Link>
+							</li>
+							<li className="mb-3">
+								<Link to="/backend" className="nav-link text-white fs-6 mb-9">
+									心得牆
+								</Link>
+							</li>
+						</ul>
+					</nav>
+
+					{/* Login Button (Fixed at Bottom) */}
+					<div className="p-3 mt-auto">
+						<button className="btn btn-outline-light w-100">會員登入</button>
+					</div>
+				</div>
+			</div>
 		</div>
 	)
 }
@@ -360,10 +433,11 @@ const App = () => {
 
 	return (
 		<Layout>
-			<section className="content bg-primary-500">
-				<div className="web">
+			<MobileHeader />
+			<section className="content bg-primary-500 mt-13 mt-lg-0">
+				<div className="d-none d-lg-block">
 					<div className="d-flex justify-content-between align-items-center">
-						<i className="bi bi-search text-white fs-5 web"></i>
+						<i className="bi bi-search text-white fs-5 "></i>
 						<div className="d-flex justify-content-center align-items-center">
 							<div className="rounded-circle bg-white text-black fs-5 pe-3">A</div>
 							<div className="text-white fs-6 ms-2">Alice</div>

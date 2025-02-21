@@ -1,9 +1,9 @@
 import React from 'react'
 import '../style/backend.css'
-
+import { Link } from 'react-router-dom'
 const Sidebar = () => {
 	return (
-		<aside className="layout-sidebar web">
+		<aside className="layout-sidebar d-none d-lg-block">
 			<div className="d-flex flex-column justify-content-between flex-shrink-0 text-white bg-primary-400 h-100 pt-9 px-7 pb-7">
 				<div>
 					<a href="/" className="d-flex align-items-center mb-12 text-white text-decoration-none">
@@ -11,24 +11,24 @@ const Sidebar = () => {
 					</a>
 					<ul className="nav nav-pills flex-column">
 						<li>
-							<a href="#" className="nav-link text-white fs-6 mb-9">
+							<Link to="/backend" className="nav-link text-white fs-6 mb-9">
 								顧客管理
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a href="#" className="nav-link text-white fs-6 mb-9">
+							<Link to="/backend" className="nav-link text-white fs-6 mb-9">
 								商品管理
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a href="#" className="nav-link text-white fs-6 mb-9">
+							<Link to="/backend" className="nav-link text-white fs-6 mb-9">
 								商品上架
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a href="#" className="nav-link text-white fs-6 mb-9">
+							<Link to="/backend" className="nav-link text-white fs-6 mb-9">
 								心得牆
-							</a>
+							</Link>
 						</li>
 					</ul>
 				</div>
