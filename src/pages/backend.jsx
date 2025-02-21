@@ -360,6 +360,11 @@ const MobileHeader = () => {
 					<nav className="mt-10 ms-10">
 						<ul className=" list-unstyled">
 							<li className="mb-3">
+								<Link to="/" className="nav-link text-white fs-6 mb-9">
+									首頁
+								</Link>
+							</li>
+							<li className="mb-3">
 								<Link to="/backend" className="nav-link text-white fs-6 mb-9">
 									顧客管理
 								</Link>
