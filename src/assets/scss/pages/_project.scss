@@ -1,0 +1,405 @@
+/* font */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+a:active {
+    color: inherit;
+}
+
+
+.roboto-r {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    text-decoration: none;
+}
+
+.fs-14 {
+    font-size: 14px;
+}
+
+.fs-16 {
+    font-size: 16px;
+}
+
+.fs-20 {
+    font-size: 20px;
+}
+
+.fs-24 {
+    font-size: 24px;
+}
+
+.fs-28 {
+    font-size: 28px;
+}
+
+.fs-32 {
+    font-size: 32px;
+}
+
+.fs-36 {
+    font-size: 36px;
+}
+
+.fs-40 {
+    font-size: 40px;
+}
+
+.fs-42 {
+    font-size: 42px;
+}
+
+
+.fs-48 {
+    font-size: 48px;
+}
+
+.fs-64 {
+    font-size: 64px;
+}
+
+
+@media (max-width:576px) {
+    .fs-64 {
+        font-size: 24px;
+    }
+
+    .fs-48 {
+        font-size: 24px;
+    }
+
+    .fs-36 {
+        font-size: 16px;
+    }
+
+}
+
+/* 主要色｜Primary  color */
+
+/* #1D222C */
+.Primary-BG-default-1D222C {
+    color: #1D222C;
+}
+
+/* #AAB4C7 */
+.Primary-BG-Tint-AAB4C {
+    color: #AAB4C7;
+}
+
+/* #161B26 */
+.Primary-Dark-161B26 {
+    color: #161B26;
+}
+
+/* #FAD344 */
+.Primary-Default-FAD344 {
+    color: #FAD344;
+}
+
+.BK-Primary-Default-FAD344 {
+    background-color: #FAD344;
+}
+
+/* #FDEDB4 */
+.Primary-Default-Tint-FDEDB4 {
+    color: #FDEDB4;
+}
+
+/* 輔助色｜Complementary  color */
+
+/* #F19632 */
+.Complementary-Orange-F19632 {
+    color: #F19632;
+}
+
+/* #D52F2F */
+.Complementary-Alert-D52F2F {
+    color: #D52F2F;
+}
+
+/* #329A3B */
+.Complementary-Success-329A3B {
+    color: #329A3B;
+}
+
+/* 灰階｜Greyscale｜Complementary  color */
+.Black-1000 {
+    color: #000000
+}
+
+.Black-900 {
+    color: #1B1B1B;
+}
+
+.Black-800 {
+    color: #353535;
+}
+
+.Black-700 {
+    color: #505050;
+}
+
+.Black-600 {
+    color: #6A6A6A;
+}
+
+.Black-500 {
+    color: #858585;
+}
+
+.Black-400 {
+    color: #9D9D9D;
+}
+
+.Black-300 {
+    color: #B6B6B6;
+}
+
+.Black-200 {
+    color: #CECECE;
+}
+
+.Black-100 {
+    color: #E7E7E7;
+}
+
+.White {
+    color: #FFFFFF;
+}
+
+.BK-White {
+    background-color: #FFFFFF;
+}
+
+/* m-d */
+.m-t-8 {
+    margin-top: 8px;
+}
+
+.m-t-16 {
+    margin-top: 16px;
+}
+
+.m-t-24 {
+    margin-top: 24px;
+}
+
+.m-r-24 {
+    margin-right: 24px;
+}
+
+.m-b-24 {
+    margin-bottom: 24px;
+}
+
+.m-b-72 {
+    margin-bottom: 72px;
+}
+
+.m-right-22 {
+    margin-right: 22px;
+}
+
+.m-left-32 {
+    margin-left: 32px;
+}
+
+.m-left-48 {
+    margin-left: 48px;
+}
+
+.m-b-80 {
+    margin-bottom: 80px;
+}
+
+/* // <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900 */
+
+.noto-sans {
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    text-decoration: none;
+}
+
+/* font-weight */
+
+
+.font-weight-bold {
+    font-weight: bold;
+}
+
+.font-weight-medium {
+    font-weight: 500;
+}
+
+/* modle */
+.container {
+    width: 1296px;
+    margin: 0 auto;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+/* RWD */
+
+@media(max-width:992px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (max-width:768px) {
+    .container {
+        max-width: 372px;
+    }
+}
+
+/* RWD 格線 斷點 */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
+.col-3 {
+    width: 25%;
+    padding-right: -12px;
+    padding-left: -12px;
+}
+
+@media(max-width:992px) {
+    .col-md-3 {
+        width: calc(50%);
+    }
+}
+
+@media(max-width:576px) {
+    .col-sm-12 {
+        width: 100%;
+    }
+}
+
+/* modle */
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+/*  */
+.bk-img {
+    background-color: #161B26;
+}
+
+/* 商品照 */
+.product-img {
+    background-image: url(./img/product-img.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    height: 380px;
+    width: 1094px;
+}
+
+.product-page_bt {
+    width: 20px;
+    height: 20px;
+    border-radius: 100px;
+}
+
+.Product_ShopCar {
+    border: 1px solid var(--White, #FFF);
+    border-radius: 8px;
+    padding: 12px 20px;
+    background-color: #161B26;
+}
+
+.product-pageButton_Num {
+    margin-bottom: 120px;
+}
+
+.product-AllImg-icon {
+    background-image: url(./img/product-img-icon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 792px;
+    width: 13px;
+}
+
+.product-AllImg-IMG-1 {
+    background-image: url(./img/正面.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 380px;
+    max-width: 1000px;
+}
+
+.product-AllImg-IMG-2 {
+    background-image: url(./img/側面.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 32px;
+    width: 1000px;
+}
+
+.product-AllImg-IMG-3 {
+    background-image: url(./img/背面.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 380px;
+    width: 1000px;
+}
+
+.product-AllImg-Font {
+    margin-bottom: 128px;
+}
+
+/* product-format 商品規格 */
+.product-format {
+    padding: 28px 120px 80px 120px;
+    align-items: center;
+
+}
+
+.product-format-title {
+    border-bottom: 1px solid var(--black-400, #9D9D9D);
+    margin-bottom: 40px;
+}
+
+.product-format {
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.10);
+
+}
+
+.product-tableTitle {
+    background: rgba(255, 255, 255, 0.10);
+}
+.product-table-TOPleft{
+    border: 1px solid #858585;
+    border-radius: 10px 0 0 0;
+    background-color: rgba(255, 255, 255, 0.10); 
+    padding: 16px 12px;
+}
+
+.product-table-nomal{
+    background-color: rgba(255, 255, 255, 0.10);
+    border-top: 1px solid #858585;
+    border-left: 1px solid #858585;
+    border-right: 1px solid #858585;
+    padding: 16px 12px;
+}

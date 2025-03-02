@@ -1,13 +1,16 @@
+import { Routes, Route } from 'react-router-dom'
+import Backend from './pages/backend'
+import Home from './pages/Home'
+import Products from './pages/Products'
 
-
-function App() {
-
+export default function App() {
 	return (
-		<>
-			<button className="btn btn-primary-300 ms-18">按鈕</button>
-			<h1 className="">c8 c8 </h1>
-		</>
+		<div className="bg-primary-500">
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/backend" element={<Backend />} />
+				<Route path='/products'element={<Products/>} />
+			</Routes>
+		</div>
 	)
 }
-
-export default App

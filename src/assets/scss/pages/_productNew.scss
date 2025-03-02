@@ -1,0 +1,443 @@
+/* font */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:active {
+    color: inherit;
+}
+
+.roboto-r {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    text-decoration: none;
+}
+
+.fs-14 {
+    font-size: 14px;
+}
+
+.fs-16 {
+    font-size: 16px;
+}
+
+.fs-20 {
+    font-size: 20px;
+}
+
+.fs-24 {
+    font-size: 24px;
+}
+
+.fs-28 {
+    font-size: 28px;
+}
+
+.fs-32 {
+    font-size: 32px;
+}
+
+.fs-36 {
+    font-size: 36px;
+}
+
+.fs-40 {
+    font-size: 40px;
+}
+
+.fs-42 {
+    font-size: 42px;
+}
+
+.fs-48 {
+    font-size: 48px;
+}
+
+.fs-64 {
+    font-size: 64px;
+}
+
+@media (max-width: 576px) {
+    .fs-64 {
+        font-size: 24px;
+    }
+
+    .fs-48 {
+        font-size: 24px;
+    }
+
+    .fs-36 {
+        font-size: 16px;
+    }
+}
+
+/* 主要色｜Primary  color */
+
+/* #1D222C */
+.Primary-BG-default-1D222C {
+    color: #1d222c;
+}
+
+/* #AAB4C7 */
+.Primary-BG-Tint-AAB4C {
+    color: #aab4c7;
+}
+
+/* #161B26 */
+.Primary-Dark-161B26 {
+    color: #161b26;
+}
+
+/* #FAD344 */
+.Primary-Default-FAD344 {
+    color: #fad344;
+}
+
+.BK-Primary-Default-FAD344 {
+    background-color: #fad344;
+}
+
+/* #FDEDB4 */
+.Primary-Default-Tint-FDEDB4 {
+    color: #fdedb4;
+}
+
+/* 輔助色｜Complementary  color */
+
+/* #F19632 */
+.Complementary-Orange-F19632 {
+    color: #f19632;
+}
+
+/* #D52F2F */
+.Complementary-Alert-D52F2F {
+    color: #d52f2f;
+}
+
+/* #329A3B */
+.Complementary-Success-329A3B {
+    color: #329a3b;
+}
+
+/* 灰階｜Greyscale｜Complementary  color */
+.Black-1000 {
+    color: #000000;
+}
+
+.Black-900 {
+    color: #1b1b1b;
+}
+
+.Black-800 {
+    color: #353535;
+}
+
+.Black-700 {
+    color: #505050;
+}
+
+.Black-600 {
+    color: #6a6a6a;
+}
+
+.Black-500 {
+    color: #858585;
+}
+
+.Black-400 {
+    color: #9d9d9d;
+}
+
+.Black-300 {
+    color: #b6b6b6;
+}
+
+.Black-200 {
+    color: #cecece;
+}
+
+.Black-100 {
+    color: #e7e7e7;
+}
+
+.White {
+    color: #ffffff;
+}
+
+.BK-White {
+    background-color: #ffffff;
+}
+
+/* m-d */
+.m-t-8 {
+    margin-top: 8px;
+}
+
+.m-t-16 {
+    margin-top: 16px;
+}
+
+.m-t-24 {
+    margin-top: 24px;
+}
+
+.m-r-24 {
+    margin-right: 24px;
+}
+
+.m-b-24 {
+    margin-bottom: 24px;
+}
+
+.m-b-72 {
+    margin-bottom: 72px;
+}
+
+.m-right-22 {
+    margin-right: 22px;
+}
+
+.m-left-32 {
+    margin-left: 32px;
+}
+
+.m-left-48 {
+    margin-left: 48px;
+}
+
+.m-b-80 {
+    margin-bottom: 80px;
+}
+
+/* // <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900 */
+
+.noto-sans {
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    text-decoration: none;
+}
+
+/* font-weight */
+
+.font-weight-bold {
+    font-weight: bold;
+}
+
+.font-weight-medium {
+    font-weight: 500;
+}
+
+/* modle */
+.container {
+    width: 1296px;
+    margin: 0 auto;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+/* RWD */
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 372px;
+    }
+}
+
+/* RWD 格線 斷點 */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
+.col-3 {
+    width: 25%;
+    padding-right: -12px;
+    padding-left: -12px;
+}
+
+@media (max-width: 992px) {
+    .col-md-3 {
+        width: calc(50%);
+    }
+}
+
+@media (max-width: 576px) {
+    .col-sm-12 {
+        width: 100%;
+    }
+}
+
+/* modle */
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+/*  */
+.bk-img {
+    background-color: #161b26;
+}
+
+/* 商品照 */
+.product-img {
+    background-image: url(/assets/images/project/product-img.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    height: 380px;
+    width: 1094px;
+}
+
+.product-page_bt {
+    width: 20px;
+    height: 20px;
+    border-radius: 100px;
+}
+
+.Product_ShopCar {
+    border: 1px solid var(--White, #fff);
+    border-radius: 8px;
+    padding: 12px 20px;
+    background-color: #161b26;
+}
+
+.product-pageButton_Num {
+    margin-bottom: 120px;
+}
+
+.product-AllImg-icon {
+    background-image: url(/assets/images/project/product-img-icon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 792px;
+    width: 13px;
+}
+
+.product-AllImg-IMG-1 {
+    background-image: url(/assets/images/project/正面.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 380px;
+    width: 1000px;
+}
+
+.product-AllImg-IMG-2 {
+    background-image: url(/assets/images/project/側面.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 380px;
+    width: 1000px;
+}
+
+.product-AllImg-IMG-3 {
+    background-image: url(/assets/images/project/背面.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 380px;
+    width:1000px;
+}
+
+
+@media (max-width: 992px) {
+
+}
+
+@media (max-width: 576px) {
+    .product-AllImg-IMG-1 {
+        background-image: url(/assets/images/project/正面.-sm.png);
+    }
+    .product-AllImg-IMG-2 {
+        background-image: url(/assets/images/project/側面-sm.png);
+    }
+    .product-AllImg-IMG-3 {
+        background-image: url(/assets/images/project/背面-sm.png);
+    }
+}
+
+.product-AllImg-Font {
+    margin-bottom: 128px;
+}
+
+/* product-format 商品規格 */
+.product-format {
+    padding: 28px 120px 80px 120px;
+    align-items: center;
+}
+
+.product-format-title {
+    border-bottom: 1px solid var(--black-400, #9d9d9d);
+    margin-bottom: 40px;
+}
+
+.product-format {
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.product-tableTitle {
+    background: rgba(255, 255, 255, 0.1);
+}
+.product-table-TOPleft {
+    border: 1px solid #858585;
+    border-radius: 10px 0 0 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 16px 12px;
+}
+
+.product-table-nomal {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-top: 1px solid #858585;
+    border-left: 1px solid #858585;
+    border-right: 1px solid #858585;
+    padding: 16px 12px;
+}
+.table-project {
+    padding: 0.5rem, 0.5rem;
+    background-color: none;
+}
+.bk-fffff-10 {
+    background: rgba(255, 255, 255, 0.1);
+}
+.bk-none-important {
+    background-color: none;
+}
+// 推薦商品
+.product-card {
+    width: 306px;
+    height: 400px;
+    justify-content: center;
+    border-radius: 20px;;
+}
+.product-card-img-1 {
+    background-image: url(/assets/images/project/Card.png);
+}
+.product-card-img-2 {
+    background-image: url(/assets/images/project/Card-1.png);
+}
+.product-card-img-3 {
+    background-image: url(/assets/images/project/Card-2.png);
+}
+.product-card-img-4 {
+    background-image: url(/assets/images/project/Card-3.png);
+}
