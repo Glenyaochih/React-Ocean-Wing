@@ -4,6 +4,10 @@ import { BsCart3, BsSearch } from 'react-icons/bs'
 function Products() {
 	return (
 		<>
+			<div className='bg-primary-300 d-flex flex-column 'style={{height:78}}>
+				<div className='mt-2'><h5 className='text-center text-dark'><span className='text-accent-200'>*夏季熱血促銷*</span>滿千免運，現在買板送腳繩 <span className='text-accent-200'>*購買兩萬以上的衝浪板，鰭 (FINs) 打八折*</span></h5></div>
+				<div className='mt-auto'><img src="/public/images/header/wave-decoration.png" alt="" /></div>
+			</div>
 			<nav className="navbar navbar-expand-lg ">
 				<div className="container-fluid">
 					<a className="navbar-brand" href="#">
@@ -14,12 +18,12 @@ function Products() {
 					</button>
 					<div className="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul className="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
-							<li className="nav-item">
+							<li className="nav-item me-10">
 								<a className="nav-link active text-white" aria-current="page" href="#">
 									<BsSearch size={32} />
 								</a>
 							</li>
-							<li className="nav-item">
+							<li className="nav-item me-10" >
 								<a className="nav-link active text-white" aria-current="page" href="#">
 									<div className="d-flex align-items-center">
 										<div
