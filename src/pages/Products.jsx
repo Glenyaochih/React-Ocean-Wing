@@ -1,53 +1,75 @@
+import Navbar from '../components/Navbar'
 import OceanFooter from '../components/OceanFooter'
-import { BsCart3, BsSearch } from 'react-icons/bs'
+import { MdOutlineAddShoppingCart, MdArrowBackIosNew, MdArrowForwardIos } from 'react-icons/md'
 
 function Products() {
 	return (
 		<>
-			<div className='bg-primary-300 d-flex flex-column 'style={{height:78}}>
-				<div className='mt-2'><h5 className='text-center text-dark'><span className='text-accent-200'>*夏季熱血促銷*</span>滿千免運，現在買板送腳繩 <span className='text-accent-200'>*購買兩萬以上的衝浪板，鰭 (FINs) 打八折*</span></h5></div>
-				<div className='mt-auto'><img src="/public/images/header/wave-decoration.png" alt="" /></div>
-			</div>
-			<nav className="navbar navbar-expand-lg ">
-				<div className="container-fluid">
-					<a className="navbar-brand" href="#">
-						<img src="/public/images/Ocean-Wings-logo-lg.svg" alt="" />
-					</a>
-					<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-						<span className="navbar-toggler-icon"></span>
-					</button>
-					<div className="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul className="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
-							<li className="nav-item me-10">
-								<a className="nav-link active text-white" aria-current="page" href="#">
-									<BsSearch size={32} />
+			<Navbar />
+
+			<div className="container pt-lg-13 pb-lg-16 pt-8 pb-15">
+				<section className="mb-7 mb-lg-10">
+					<nav aria-label="breadcrumb">
+						<ol className="breadcrumb">
+							<li className="breadcrumb-item">
+								<a className="" href="#">
+									首頁
 								</a>
 							</li>
-							<li className="nav-item me-10" >
-								<a className="nav-link active text-white" aria-current="page" href="#">
-									<div className="d-flex align-items-center">
-										<div
-											className="rounded-circle p-2 bg-white d-flex justify-content-center align-items-center me-3"
-											style={{
-												width: 40,
-												height: 40,
-											}}
-										>
-											<h4 className="text-dark">A</h4>
+							<li className="breadcrumb-item active" aria-current="page">
+								Library
+							</li>
+						</ol>
+					</nav>
+				</section>
+				<section>
+					<div className="row row-cols-1 row-cols-lg-3 gy-7">
+						<div className="col">
+							<div>
+								<a href="">
+									<img src="https://images.unsplash.com/photo-1586132945790-6f52459555fe?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTV8fHN1cmZib2FyZHxlbnwwfHwwfHx8Mg%3D%3D" className="card-img-top rounded-5 object-fit-cover" style={{ height: 260 }} alt="..." />
+								</a>
+								<div className="card-body bg-primary-500 ">
+									<div className="d-flex pt-3 pb-4">
+										<div>
+											<p className="card-title pb-1 h7">商品名稱</p>
+											<p>
+												<small>#類別</small>
+											</p>
 										</div>
-										<h5>Alice</h5>
+										<h5 className="ms-auto">$88888</h5>
 									</div>
+									<a href="#" className="btn btn-outline-light w-100">
+										<MdOutlineAddShoppingCart size={28} />
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section className="mt-12 mt-lg-14">
+					<nav className="w-100 " aria-label="Page navigation">
+						<ul className="pagination pagination-lg justify-content-center">
+							<li className="page-item">
+								<a className="page-link" href="#" aria-label="Previous">
+									<MdArrowBackIosNew />
 								</a>
 							</li>
-							<li className="nav-item">
-								<a className="nav-link active text-white" aria-current="page" href="#">
-									<BsCart3 size={32} />
+							<li className="page-item">
+								<a className="page-link" href="#">
+									1
+								</a>
+							</li>
+							<li className="page-item">
+								<a className="page-link" href="#" aria-label="Next">
+									<MdArrowForwardIos />
 								</a>
 							</li>
 						</ul>
-					</div>
-				</div>
-			</nav>
+					</nav>
+				</section>
+			</div>
 
 			<OceanFooter />
 		</>

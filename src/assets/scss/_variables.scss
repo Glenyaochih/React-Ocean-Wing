@@ -1302,8 +1302,8 @@ $nav-underline-link-active-color: var(--#{$prefix}emphasis-color) !default;
 // Navbar
 
 // scss-docs-start navbar-variables
-$navbar-padding-y: $spacer * 2.6875 !default;
-$navbar-padding-x: $spacer * 4.25 !default; //null !default;
+$navbar-padding-y: null !default; // $spacer * 0.5 !default;
+$navbar-padding-x: null !default;
 
 $navbar-nav-link-padding-x: 0.5rem !default;
 
@@ -1413,9 +1413,9 @@ $pagination-padding-x-lg: 1.5rem !default;
 $pagination-font-size: $font-size-base !default;
 
 $pagination-color: var(--#{$prefix}link-color) !default;
-$pagination-bg: var(--#{$prefix}body-bg) !default;
-$pagination-border-radius: var(--#{$prefix}border-radius) !default;
-$pagination-border-width: var(--#{$prefix}border-width) !default;
+$pagination-bg: $primary-500 !default; //var(--#{$prefix}body-bg) !default;
+$pagination-border-radius: 0 !default; //var(--#{$prefix}border-radius) !default;
+$pagination-border-width: 0 !default; //var(--#{$prefix}border-width) !default;
 $pagination-margin-start: calc(#{$pagination-border-width} * -1) !default; // stylelint-disable-line function-disallowed-list
 $pagination-border-color: var(--#{$prefix}border-color) !default;
 
@@ -1424,7 +1424,7 @@ $pagination-focus-bg: var(--#{$prefix}secondary-bg) !default;
 $pagination-focus-box-shadow: $focus-ring-box-shadow !default;
 $pagination-focus-outline: 0 !default;
 
-$pagination-hover-color: var(--#{$prefix}link-hover-color) !default;
+$pagination-hover-color: $secondary-700 !default; //var(--#{$prefix}link-hover-color) !default;
 $pagination-hover-bg: var(--#{$prefix}tertiary-bg) !default;
 $pagination-hover-border-color: var(--#{$prefix}border-color) !default; // Todo in v6: remove this?
 
@@ -1745,9 +1745,11 @@ $breadcrumb-padding-x: 0 !default;
 $breadcrumb-item-padding-x: 0.5rem !default;
 $breadcrumb-margin-bottom: 1rem !default;
 $breadcrumb-bg: null !default;
-$breadcrumb-divider-color: var(--#{$prefix}secondary-color) !default;
-$breadcrumb-active-color: var(--#{$prefix}secondary-color) !default;
-$breadcrumb-divider: quote('/') !default;
+$breadcrumb-divider-color: $white; //var(--#{$prefix}secondary-color) !default;
+$breadcrumb-active-color: $white; //var(--#{$prefix}secondary-color) !default;
+$breadcrumb-divider: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><path d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='#{$breadcrumb-divider-color}'/></svg>"
+);
+//quote('/') !default;
 $breadcrumb-divider-flipped: $breadcrumb-divider !default;
 $breadcrumb-border-radius: null !default;
 // scss-docs-end breadcrumb-variables

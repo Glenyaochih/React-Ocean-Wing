@@ -39,8 +39,10 @@ function Home() {
 										</a>
 									</div>
 									<div className="mt-auto">
-										<NavLink className="nav-link btn" to='/products'>
-											長板 <span className="align-text-bottom material-symbols-outlined fs-5 ">arrow_right</span>
+										<NavLink className="nav-link" to="/products">
+											<button className='btn'>
+												長板 <span className="align-text-bottom material-symbols-outlined fs-5 ">arrow_right</span>
+											</button>
 										</NavLink>
 									</div>
 									<div>
