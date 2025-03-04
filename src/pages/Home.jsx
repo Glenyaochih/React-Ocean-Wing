@@ -17,6 +17,7 @@ const Home = () => {
 				email,
 				password,
 			})
+			sessionStorage.setItem('user', response.data.user.name)
 
 			console.log('Login successful', response.data)
 			navigate('/backend')

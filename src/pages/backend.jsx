@@ -264,7 +264,6 @@ const ProductTable = ({ selectedProductIds, onProductSelect, handleDeleteClick }
 	return (
 		<div className="table-wrapper">
 			<div className="table-container table-responsive ">
-				{/* {loading && <div className="text-center">載入中...</div>} */}
 				{error && <div className="text-center text-danger">{error}</div>}
 
 				<table className="table rounded-table table-hover">
@@ -329,7 +328,6 @@ const MobileHeader = () => {
 	return (
 		<div className="d-lg-none">
 			{/* Fixed Header */}
-			{/* Fixed Header */}
 			<div className="bg-primary-400" style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000 }}>
 				<div className="d-flex align-items-center p-3">
 					<button className="btn text-white me-3" onClick={toggleMenu}>
@@ -347,10 +345,10 @@ const MobileHeader = () => {
 				className="bg-primary-400 overflow-hidden d-flex flex-column"
 				style={{
 					position: 'fixed',
-					top: '80px', // 讓它從 header 下面開始
+					top: '80px',
 					left: 0,
 					right: 0,
-					height: isMenuOpen ? 'calc(100vh - 80px)' : '0', // 讓 menu 佔滿 header 下面的區域
+					height: isMenuOpen ? 'calc(100vh - 80px)' : '0',
 					transition: 'height 0.3s ease-in-out',
 					zIndex: 999,
 				}}
@@ -400,7 +398,15 @@ const MobileHeader = () => {
 const App = () => {
 	const [selectedProductIds, setSelectedProductIds] = useState([])
 	const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
+	const [userName, setUserName] = useState('Alice')
 	const API_HOST = import.meta.env.VITE_BACKEND_HOST
+
+	useEffect(() => {
+		const storedUser = sessionStorage.getItem('user')
+		if (storedUser) {
+			setUserName(storedUser)
+		}
+	}, [])
 
 	const handleProductSelect = productId => {
 		setSelectedProductIds(prevSelectedProductIds => {
@@ -444,8 +450,10 @@ const App = () => {
 					<div className="d-flex justify-content-between align-items-center">
 						<i className="bi bi-search text-white fs-5 "></i>
 						<div className="d-flex justify-content-center align-items-center">
-							<div className="rounded-circle bg-white text-black fs-5 pe-3">A</div>
-							<div className="text-white fs-6 ms-2">Alice</div>
+							<div className="rounded-circle bg-white text-black fs-5 d-flex justify-content-center align-items-center" style={{ width: '40px', height: '40px' }}>
+								{userName ? userName.charAt(0).toUpperCase() : 'A'}
+							</div>{' '}
+							<div className="text-white fs-6 ms-2">{userName}</div>
 						</div>
 					</div>
 				</div>
@@ -469,5 +477,4 @@ const App = () => {
 		</Layout>
 	)
 }
-
 export default App
