@@ -270,7 +270,7 @@ const ProductTable = ({ selectedProductIds, onProductSelect, handleDeleteClick }
 				<table className="table rounded-table table-hover">
 					<thead>
 						<tr>
-							<th></th>
+							<th style={{ minWidth: '80px', width: '80px' }}></th>
 							<th style={{ minWidth: '120px', width: '120px' }}>商品編號</th>
 							<th style={{ minWidth: '180px', width: '200px' }}>商品名稱</th>
 							<th style={{ minWidth: '180px', width: '180px' }}>類型</th>
