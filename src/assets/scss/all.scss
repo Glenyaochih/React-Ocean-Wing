@@ -3,13 +3,12 @@
 
 @import 'bootstrap/scss/functions';
 @import './variables';
-@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap/scss/bootstrap.scss';
 @import'./utilities';
 
 @import'./base/base';
 @import '../scss/helper/media';
+@import'../scss/pages/home';
 @import'../scss/layout/footer';
 @import'../scss/layout/navbar';
-
-
-@import '../scss/pages/index';
+@import'../scss/pages/surfKnowledge';

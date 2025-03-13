@@ -12,7 +12,7 @@ function Home() {
                 <iframe src="https://https://www.youtube.com/watch?v=aYBGV8ssve4&t=535s" title="YouTube video"
                     allowfullscreen></iframe>
             </div> --> */}
-							<video className=" index-video vh-100" poster="https://videos.pexels.com/video-files/2802271/2802271-hd_1920_1080_30fps.mp4" playsInline="playsinline" autoPlay="autoplay" muted="muted" loop="loop">
+							<video className=" index-video" poster="https://videos.pexels.com/video-files/2802271/2802271-hd_1920_1080_30fps.mp4" playsInline="playsinline" autoPlay="autoplay" muted="muted" loop="loop">
 								<source src=" https://videos.pexels.com/video-files/2802271/2802271-hd_1920_1080_30fps.mp4" type="video/mp4" />
 							</video>
 							<div className="index-navbar container-fluid px-md-11 px-lg-14 position-absolute top-0 start-0 w-100">
@@ -181,7 +181,7 @@ function Home() {
 						<div className="col-lg-2 col-4">
 							<div className="card rounded-0">
 								<picture>
-									<source media="(max-width: 992px)" srcSet="/assets/images/third-party-sm/third-party-sm-01.png" />
+									<source media="(max-width: 992px)" srcSet="/public/images/third-party-sm/third-party-sm-01.png" />
 									<img src="/public/images/third-party-lg/third-party-lg-01.png" width="100%" alt="third-party-img" />
 								</picture>
 							</div>

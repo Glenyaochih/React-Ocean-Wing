@@ -1,12 +1,13 @@
+
 import Navbar from '../components/Navbar'
 import OceanFooter from '../components/OceanFooter'
-import { MdOutlineAddShoppingCart, MdArrowBackIosNew, MdArrowForwardIos } from 'react-icons/md'
 
 function Products() {
+	
+
 	return (
 		<>
 			<Navbar />
-
 			<div className="container pt-lg-13 pb-lg-16 pt-8 pb-15">
 				<section className="mb-7 mb-lg-10">
 					<nav aria-label="breadcrumb">
@@ -70,7 +71,6 @@ function Products() {
 					</nav>
 				</section>
 			</div>
-
 			<OceanFooter />
 		</>
 	)
