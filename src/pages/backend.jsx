@@ -110,7 +110,7 @@ const ProductTable = () => {
 		const fetchProducts = async () => {
 			setLoading(true)
 			try {
-				const res = await axios.get(`${API_HOST}/api/products`, {
+				const res = await axios.get(`${API_HOST}/api/products/`, {
 					params: { page, limit },
 				})
 				const data = res.data
